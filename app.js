@@ -11,9 +11,8 @@ const app = Vue.createApp({
   methods: {
     async getUser() {
         const res = await fetch('https://randomuser.me/api')
-        const { results } = await res.json()
-
-        console.log(results);
+        const { results } = await res.json() // we get back a results array, with data for single user, let's destructure the array of objects
+        console.log(results); // the clg shows the data in dev tools console
 
       this.firstName = results[0].name.first;
       this.lastName = results[0].name.last;
